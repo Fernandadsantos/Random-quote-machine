@@ -1,0 +1,68 @@
+#quote-box{
+    margin: 0 auto;
+    margin-top: 200px;
+    background-color: #fff;
+    width: 550px;
+    max-height: fit-content;
+    border-radius: 2px;
+    padding: 20px;
+    font-family: "Lora", serif;
+    overflow: hidden;
+}
+
+#text{ 
+    width: 100%; 
+    font-weight: 100;
+    letter-spacing: 0.1px;
+    margin-top: 30px;  
+    opacity: 0; 
+    animation: visible 1s ease-in-out forwards;  
+}
+
+@keyframes visible {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#text.visible{
+    animation: visible 1s ease-in-out forwards;
+}
+ 
+
+
+#author{
+    text-align: center;
+    font-weight: 100; 
+}
+
+.buttons{
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around; 
+    margin-top: 50px;
+    padding: 10px;
+}
+
+#new-quote,
+.tweet-quote{
+    cursor: pointer;
+    background-color: #739eec;
+    border: none;
+    border-radius: 3px; 
+}
+
+.twitterLogo{
+    width: 30px;
+    height:  30px;
+    padding-top: 5px;
+}
+
+#new-quote{
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 0px 10px 0px 10px;
+}
