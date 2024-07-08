@@ -1,11 +1,20 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'; 
+  
+console.log(process.env.REACT_APP_KEY)
+const url = 'https://api.api-ninjas.com/v1/quotes?category=computers';
+const options = {
+    method: 'GET',
+    headers: { 
+        'X-Api-Key': process.env.REACT_APP_KEY
+    },
+};
 
 export const fetchQuote = createAsyncThunk(
     'generateQuote/fetchQuote',
     async () => {
-        const response = await fetch('https://api.quotable.io/random');
-        const data = await response.json();
-        return data;
+        const response = await fetch(url, options);
+        const data = await response.json();   
+        return data[0];
     }
 );
 
@@ -19,7 +28,7 @@ const generateQuoteSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchQuote.fulfilled, (state, action) => {
-                state.quote = action.payload.content;
+                state.quote = action.payload.quote;
                 state.author = action.payload.author;
             });
     },

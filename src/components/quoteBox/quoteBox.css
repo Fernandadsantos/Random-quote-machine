@@ -1,18 +1,18 @@
-#quote-box{
+#quote-box{ 
     margin: 0 auto;
     margin-top: 200px;
     background-color: #fff;
-    width: 550px;
+    width: 40%;
     max-height: fit-content;
     border-radius: 2px;
     padding: 20px;
     font-family: "Lora", serif;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 #text{ 
-    width: 100%; 
-    font-weight: 100;
+    width: 100%;  
     letter-spacing: 0.1px;
     margin-top: 30px;  
     opacity: 0; 
@@ -31,15 +31,12 @@
 #text.visible{
     animation: visible 1s ease-in-out forwards;
 }
- 
-
-
+  
 #author{
-    text-align: center;
-    font-weight: 100; 
+    text-align: center; 
 }
 
-.buttons{
+.buttons{ 
     overflow: hidden;
     display: flex;
     justify-content: space-around; 
@@ -50,9 +47,10 @@
 #new-quote,
 .tweet-quote{
     cursor: pointer;
-    background-color: #739eec;
+    background-color: #BABFD1;
     border: none;
     border-radius: 3px; 
+    font-size: 16px
 }
 
 .twitterLogo{
@@ -60,9 +58,16 @@
     height:  30px;
     padding-top: 5px;
 }
-
+  
 #new-quote{
     letter-spacing: 1px;
     font-weight: 600;
     padding: 0px 10px 0px 10px;
+}
+
+
+@media screen and (max-width: 700px) {
+    #quote-box{  
+        width: 80%; 
+    } 
 }
